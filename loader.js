@@ -1,23 +1,26 @@
 var Carlot = (function(miracle) {
-	var cars = [];
-
-	return {
+	var touchyCar = [];
 
 
 
-		loadCars: function(callback) {
+
+		miracle.loadCars = function(callback) {
 			var loader = new XMLHttpRequest();
 
 			loader.addEventListener("load", function(cars) {
-				cars = JSON.parse(this.responseText).cars;
-				callback(cars)
-				console.log(cars)
+				touchyCar = JSON.parse(this.responseText).cars;
+				// console.log(cars)
+				callback(touchyCar)
 			});
 
 			loader.open("GET", "inventory.json");
 			loader.send();
-			return cars;
-		},
-	};
+			// return cars;
+		};
+
+		miracle.getInventory = function() {
+			return touchyCar;
+		};
+	return miracle
 })(Carlot || {});
 

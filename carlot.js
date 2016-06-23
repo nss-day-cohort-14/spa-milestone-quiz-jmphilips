@@ -1,21 +1,27 @@
 var outputEl = document.getElementById("outputEl");
+var userInput = document.getElementById("userInput")
 count = 0;
-
+var arrayOfDivs = [];
 
 function showCars (cars) {
+
+	
+
 	for (var i = 0; i < cars.length; i++) {
 
 		var cardContainer = document.createElement("div");
 		cardContainer.setAttribute("class", "col-xs-4 normalDivs");
 		cardContainer.setAttribute("style", "border-color: " + cars[i].color);
 		cardContainer.setAttribute("id", "message--" + count)
-		
+		arrayOfDivs.push(cardContainer);
+
 		var carMakeH1 = document.createElement("h1");
 		var carModelP = document.createElement("p");
 		var carYearP = document.createElement("p");
 		var carColorP = document.createElement("p");
 		var carPurchase = document.createElement("p");
-		var carDescribeP = document.createElement("p");
+		var carDescribeH6 = document.createElement("h6");
+		carDescribeH6.setAttribute("class", "describer")
 
 
 
@@ -31,7 +37,7 @@ function showCars (cars) {
 		carModelP.innerText = carModelText;
 		carYearP.innerText = carYearText;
 		carColorP.innerText = carColorText;
-		carDescribeP.innerText = carDescribeText;
+		carDescribeH6.innerText = carDescribeText;
 
 		if (purchasedText === true) {
 			carPurchase.innerHTML = "SOLD";
@@ -44,15 +50,13 @@ function showCars (cars) {
 		cardContainer.appendChild(carModelP);
 		cardContainer.appendChild(carYearP);
 		cardContainer.appendChild(carColorP);
-		cardContainer.appendChild(carDescribeP);
+		cardContainer.appendChild(carDescribeH6);
 		cardContainer.appendChild(carColorP);
 		cardContainer.appendChild(carPurchase);
 
 		count++
 	};
-
-	
-
 }
 
-Carlot.loadCars(showCars)
+Carlot.loadCars(showCars);
+Carlot.activateEvents();
