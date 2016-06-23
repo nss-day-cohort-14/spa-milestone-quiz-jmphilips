@@ -3,6 +3,8 @@ var userInput = document.getElementById("userInput")
 count = 0;
 var arrayOfDivs = [];
 
+
+
 function showCars (cars) {
 
 	
