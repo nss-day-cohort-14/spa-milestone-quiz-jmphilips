@@ -24,6 +24,7 @@ var Carlot = (function(carListeners) {
 			if (oldTarget === currentElement) {
 				carListeners.backToOriginal(currentElement);
 				oldTarget = null;
+				userInput.value = "";
 			} else {
 
 				if (oldTarget != null) {

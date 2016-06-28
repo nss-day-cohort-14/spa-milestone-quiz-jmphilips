@@ -1,9 +1,9 @@
-var outputEl = document.getElementById("outputEl");
-var userInput = document.getElementById("userInput")
-count = 0;
-var arrayOfDivs = [];
-
 function showCars (cars) {
+
+	var outputEl = document.getElementById("outputEl");
+	var userInput = document.getElementById("userInput")
+	count = 0;
+	var arrayOfDivs = [];
 
 	for (var i = 0; i < cars.length; i++) {
 
