@@ -3,11 +3,7 @@ var userInput = document.getElementById("userInput")
 count = 0;
 var arrayOfDivs = [];
 
-
-
 function showCars (cars) {
-
-	
 
 	for (var i = 0; i < cars.length; i++) {
 
@@ -25,15 +21,12 @@ function showCars (cars) {
 		var carDescribeH6 = document.createElement("h6");
 		carDescribeH6.setAttribute("class", "describer")
 
-
-
 		var carMake = cars[i].make;
 		var carModelText = cars[i].model;
 		var carYearText = cars[i].year;
 		var carColorText = cars[i].color;
 		var purchasedText = cars[i].purchased;
 		var carDescribeText = cars[i].description;
-
 
 		carMakeH1.innerText = carMake;
 		carModelP.innerText = carModelText;
@@ -58,7 +51,9 @@ function showCars (cars) {
 
 		count++
 	};
+
+	Carlot.activateEvents();
 }
 
 Carlot.loadCars(showCars);
-Carlot.activateEvents();
+

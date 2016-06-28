@@ -1,26 +1,22 @@
-var Carlot = (function(miracle) {
-	var touchyCar = [];
+var Carlot = (function(lot) {
+	var carsArray = [];
 
-		document.getElementById("")
+	lot.loadCars = function(callback) {
+		var loader = new XMLHttpRequest();
 
+		loader.addEventListener("load", function(car){
+			carsArray = JSON.parse(this.responseText).cars;
+			callback(carsArray)
+		});
 
-		miracle.loadCars = function(callback) {
-			var loader = new XMLHttpRequest();
+		loader.open("GET", "inventory.json");
+		loader.send();
+	};
 
-			loader.addEventListener("load", function(cars) {
-				touchyCar = JSON.parse(this.responseText).cars;
-				// console.log(cars)
-				callback(touchyCar)
-			});
+	lot.getInventory = function() {
+		return carsArray;
+	}; 
 
-			loader.open("GET", "inventory.json");
-			loader.send();
-			// return cars;
-		};
-
-		miracle.getInventory = function() {
-			return touchyCar;
-		};
-	return miracle
+	return lot;
 })(Carlot || {});
 
